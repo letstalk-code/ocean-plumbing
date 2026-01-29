@@ -12,9 +12,25 @@ export async function POST(request) {
             return NextResponse.json({ success: false, error: 'Configuration Error' }, { status: 500 });
         }
 
+        // Clean phone number (GHL API v2 is strict)
+        // Removes all non-numeric characters except +
+        const rawPhone = data.phone || '';
+        const cleanPhone = rawPhone.replace(/[^\d+]/g, '');
+
         // Prepare GHL API Request
-        // We'll use the upsert contact pattern (create or update)
         // API v2 endpoint: https://services.leadconnectorhq.com/contacts/upsert
+        const contactPayload = {
+            locationId: GHL_LOCATION_ID,
+            firstName: data.name ? data.name.split(' ')[0] : 'New',
+            lastName: data.name ? data.name.split(' ').slice(1).join(' ') : 'Lead',
+            email: data.email,
+            phone: cleanPhone,
+            companyName: data.businessName || '',
+            tags: ['smartsite_yes']
+        };
+
+        console.log('Sending to GHL:', JSON.stringify(contactPayload));
+
         const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
             method: 'POST',
             headers: {
@@ -22,23 +38,21 @@ export async function POST(request) {
                 'Authorization': `Bearer ${GHL_ACCESS_TOKEN}`,
                 'Version': '2021-07-28'
             },
-            body: JSON.stringify({
-                locationId: GHL_LOCATION_ID,
-                firstName: data.name.split(' ')[0],
-                lastName: data.name.split(' ').slice(1).join(' ') || '',
-                email: data.email,
-                phone: data.phone,
-                companyName: data.businessName,
-                tags: ['smartsite_yes']
-            }),
+            body: JSON.stringify(contactPayload),
         });
 
+        const responseData = await ghlResponse.json();
+
         if (ghlResponse.ok) {
-            return NextResponse.json({ success: true });
+            console.log('GHL Success:', JSON.stringify(responseData));
+            return NextResponse.json({ success: true, data: responseData });
         } else {
-            const errorData = await ghlResponse.json();
-            console.error('GHL API Submission Failed:', JSON.stringify(errorData));
-            return NextResponse.json({ success: false, error: 'API submission failed' }, { status: ghlResponse.status });
+            console.error('GHL API Submission Failed:', JSON.stringify(responseData));
+            return NextResponse.json({
+                success: false,
+                error: responseData.message || 'API submission failed',
+                details: responseData
+            }, { status: ghlResponse.status });
         }
     } catch (error) {
         console.error('Bridge API Error:', error);
