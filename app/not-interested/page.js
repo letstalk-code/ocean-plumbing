@@ -1,9 +1,24 @@
 'use client';
+import { useEffect } from 'react';
 import { siteConfig } from '../../master-templates/plumbing-luxury/config/site-config';
 import Link from 'next/link';
 
 export default function NotInterested() {
     const { brandColors } = siteConfig;
+
+    useEffect(() => {
+        // Automatically tag as 'NO' if email is in the URL
+        const params = new URLSearchParams(window.location.search);
+        const email = params.get('email');
+
+        if (email) {
+            fetch('/api/submit-no', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+        }
+    }, []);
 
     return (
         <main style={{
