@@ -54,8 +54,8 @@ export default function YesBuild() {
             }}>
                 <div style={{ maxWidth: '600px', width: '100%', textAlign: 'center' }}>
                     <img src={siteConfig.logoUrl} alt={siteConfig.businessName} style={{ height: '60px', marginBottom: '40px' }} />
-                    <h1 style={{ fontFamily: '"Playfair Display", serif', fontSize: '3.5rem', color: brandColors.secondary }}>You're all set! 🚀</h1>
-                    <p style={{ fontSize: '1.2rem', color: '#64748b' }}>I've received your info. I'll get to work on the final touches and reach out shortly.</p>
+                    <h1 style={{ fontFamily: '"Playfair Display", serif', fontSize: '3.5rem', color: brandColors.secondary }}>Sounds good — <span style={{ color: brandColors.primary }}>I’ll take it from here.</span></h1>
+                    <p style={{ fontSize: '1.2rem', color: '#64748b' }}>I’ll finish the website and put it live. I’ll follow up shortly once it’s set up 👍</p>
                 </div>
             </main>
         );
