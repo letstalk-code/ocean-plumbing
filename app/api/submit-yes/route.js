@@ -9,13 +9,18 @@ export async function POST(request) {
 
         if (!GHL_ACCESS_TOKEN || !GHL_LOCATION_ID) {
             console.error('GHL Credentials missing in environment');
-            return NextResponse.json({ success: false, error: 'Configuration Error' }, { status: 500 });
+            return NextResponse.json({ success: false, error: 'Configuration Error: Missing Credentials' }, { status: 500 });
         }
 
-        // Clean phone number (GHL API v2 is strict)
-        // Removes all non-numeric characters except +
         const rawPhone = data.phone || '';
-        const cleanPhone = rawPhone.replace(/[^\d+]/g, '');
+        let cleanPhone = rawPhone.replace(/[^\d+]/g, '');
+
+        // Heuristic for US numbers: if 10 digits, add +1.
+        if (cleanPhone.length === 10 && !cleanPhone.startsWith('+')) {
+            cleanPhone = `+1${cleanPhone}`;
+        } else if (cleanPhone.length === 11 && cleanPhone.startsWith('1')) {
+            cleanPhone = `+${cleanPhone}`;
+        }
 
         // Prepare GHL API Request
         // API v2 endpoint: https://services.leadconnectorhq.com/contacts/upsert

@@ -30,7 +30,8 @@ export default function YesBuild() {
             if (res.ok) {
                 setIsSuccess(true);
             } else {
-                alert('Something went wrong. Please try again.');
+                const errorData = await res.json();
+                alert(`Submission Failed: ${errorData.error || 'Unknown error'}`);
             }
         } catch (err) {
             console.error(err);
