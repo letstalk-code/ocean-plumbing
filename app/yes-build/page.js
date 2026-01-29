@@ -1,8 +1,65 @@
 'use client';
+import { useState } from 'react';
 import { siteConfig } from '../../master-templates/plumbing-luxury/config/site-config';
 
 export default function YesBuild() {
     const { brandColors } = siteConfig;
+
+    // Local state for the component
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        const data = {
+            name: e.target.elements[0].value,
+            email: e.target.elements[1].value,
+            phone: e.target.elements[2].value,
+            businessName: e.target.elements[3].value,
+        };
+
+        try {
+            const res = await fetch('/api/submit-yes', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (res.ok) {
+                setIsSuccess(true);
+            } else {
+                alert('Something went wrong. Please try again.');
+            }
+        } catch (err) {
+            console.error(err);
+            alert('Connection error. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    if (isSuccess) {
+        return (
+            <main style={{
+                backgroundColor: '#fff',
+                minHeight: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '40px 20px',
+                fontFamily: '"Syne", sans-serif'
+            }}>
+                <div style={{ maxWidth: '600px', width: '100%', textAlign: 'center' }}>
+                    <img src={siteConfig.logoUrl} alt={siteConfig.businessName} style={{ height: '60px', marginBottom: '40px' }} />
+                    <h1 style={{ fontFamily: '"Playfair Display", serif', fontSize: '3.5rem', color: brandColors.secondary }}>You're all set! 🚀</h1>
+                    <p style={{ fontSize: '1.2rem', color: '#64748b' }}>I've received your info. I'll get to work on the final touches and reach out shortly.</p>
+                </div>
+            </main>
+        );
+    }
 
     return (
         <main style={{
@@ -37,7 +94,7 @@ export default function YesBuild() {
                     I’ll finish the website and put it live. There’s no upfront cost — just a small monthly to keep it running.
                 </p>
 
-                <form style={{
+                <form onSubmit={handleSubmit} style={{
                     backgroundColor: '#F8FAFC',
                     padding: '40px',
                     borderRadius: '24px',
@@ -47,37 +104,37 @@ export default function YesBuild() {
                 }}>
                     <div style={{ marginBottom: '20px' }}>
                         <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: brandColors.secondary }}>Full Name</label>
-                        <input type="text" placeholder="John Doe" style={{ width: '100%', padding: '15px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '1rem' }} />
+                        <input required type="text" placeholder="John Doe" style={{ width: '100%', padding: '15px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '1rem' }} />
                     </div>
 
                     <div style={{ marginBottom: '20px' }}>
                         <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: brandColors.secondary }}>Email Address</label>
-                        <input type="email" placeholder="john@example.com" style={{ width: '100%', padding: '15px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '1rem' }} />
+                        <input required type="email" placeholder="john@example.com" style={{ width: '100%', padding: '15px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '1rem' }} />
                     </div>
 
                     <div style={{ marginBottom: '20px' }}>
                         <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: brandColors.secondary }}>Phone Number</label>
-                        <input type="tel" placeholder="(555) 000-0000" style={{ width: '100%', padding: '15px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '1rem' }} />
+                        <input required type="tel" placeholder="(555) 000-0000" style={{ width: '100%', padding: '15px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '1rem' }} />
                     </div>
 
                     <div style={{ marginBottom: '40px' }}>
                         <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: brandColors.secondary }}>Business Name</label>
-                        <input type="text" placeholder="Pivotal Plumbing" style={{ width: '100%', padding: '15px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '1rem' }} />
+                        <input required type="text" placeholder="Pivotal Plumbing" style={{ width: '100%', padding: '15px', borderRadius: '12px', border: '1px solid #cbd5e1', fontSize: '1rem' }} />
                     </div>
 
-                    <button type="submit" style={{
+                    <button type="submit" disabled={isSubmitting} style={{
                         width: '100%',
-                        backgroundColor: brandColors.primary,
+                        backgroundColor: isSubmitting ? '#cbd5e1' : brandColors.primary,
                         color: '#fff',
                         padding: '20px',
                         borderRadius: '16px',
                         border: 'none',
                         fontSize: '1.2rem',
                         fontWeight: '700',
-                        cursor: 'pointer',
-                        boxShadow: `0 10px 20px ${brandColors.primary}33`
+                        cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                        boxShadow: isSubmitting ? 'none' : `0 10px 20px ${brandColors.primary}33`
                     }}>
-                        Start My Website
+                        {isSubmitting ? 'Sending...' : 'Start My Website'}
                     </button>
                 </form>
             </div>
