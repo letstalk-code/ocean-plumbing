@@ -1,5 +1,1 @@
-{
-    "buildCommand": "cd master-templates/plumbing-luxury && npm install && npm run build",
-    "outputDirectory": "master-templates/plumbing-luxury/.next",
-    "installCommand": "cd master-templates/plumbing-luxury && npm install"
-}
+{}
