@@ -1,19 +1,9 @@
-import LuxuryHero from '../master-templates/plumbing-luxury/components/LuxuryHero';
-import LuxuryDetails from '../master-templates/plumbing-luxury/components/LuxuryDetails';
-import BentoServices from '../master-templates/plumbing-luxury/components/BentoServices';
-import Footer from '../master-templates/plumbing-luxury/components/Footer';
-
 export default function Home() {
     return (
-        <main style={{ backgroundColor: '#fff' }}>
-            <LuxuryHero />
-            <LuxuryDetails />
-            <BentoServices />
-            <Footer />
-
-            {/* Modern Serif Font for this template */}
-            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
-        </main>
+        <div style={{ textAlign: 'center', padding: '100px 20px' }}>
+            <h1>Ocean Plumbing Services</h1>
+            <p>Welcome to Ocean Plumbing Services. Coming soon.</p>
+        </div>
     );
 }
 
