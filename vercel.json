@@ -1,5 +1,5 @@
 {
-    "buildCommand": "cd master-templates/hvac-professional && npm install && npm run build",
-    "outputDirectory": "master-templates/hvac-professional/.next",
-    "installCommand": "cd master-templates/hvac-professional && npm install"
+    "buildCommand": "cd master-templates/plumbing-luxury && npm install && npm run build",
+    "outputDirectory": "master-templates/plumbing-luxury/.next",
+    "installCommand": "cd master-templates/plumbing-luxury && npm install"
 }
