@@ -1,6 +1,6 @@
-import LuxuryHero from '../master-templates/plumbing-luxury/components/LuxuryHero';
-import LuxuryDetails from '../master-templates/plumbing-luxury/components/LuxuryDetails';
-import BentoServices from '../master-templates/plumbing-luxury/components/BentoServices';
+import LuxuryHero from '../components/LuxuryHero';
+import LuxuryDetails from '../components/LuxuryDetails';
+import BentoServices from '../components/BentoServices';
 import Footer from '../components/Footer';
 
 // TIP: In a real app, we would use a dynamic switch based on the client name.
