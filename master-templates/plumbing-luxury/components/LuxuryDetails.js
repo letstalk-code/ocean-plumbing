@@ -11,7 +11,7 @@ export default function LuxuryDetails() {
 
                     <div style={{ position: 'relative' }}>
                         <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: '5rem', lineHeight: '1', fontWeight: '400' }}>
-                            Experience excellence in <span style={{ color: brandColors.primary }}>every corner</span> of your home
+                            Experience excellence across the <span style={{ color: brandColors.primary }}>Gulf Coast</span>
                         </h2>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginTop: '60px' }}>
                             <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: brandColors.primary, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: `0 0 20px ${brandColors.primary}66` }}>

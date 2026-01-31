@@ -8,12 +8,11 @@ export default function Footer() {
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '60px', marginBottom: '80px' }}>
 
                     <div>
-                        <div style={{ fontWeight: '700', fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '25px' }}>
-                            <div style={{ width: '32px', height: '32px', backgroundColor: 'var(--primary)', borderRadius: '8px' }}></div>
-                            {siteConfig.businessName}
+                        <div style={{ marginBottom: '25px' }}>
+                            <img src={siteConfig.logoUrl} alt={siteConfig.businessName} style={{ height: '400px', objectFit: 'contain' }} />
                         </div>
                         <p style={{ color: '#666', lineHeight: '1.7', marginBottom: '30px', maxWidth: '300px' }}>
-                            Providing premium home services since 1975. Our team is dedicated to your comfort and satisfaction.
+                            Providing premium coastal plumbing services with precision and care. Our team is dedicated to your home's integrity and satisfaction.
                         </p>
                         <div style={{ display: 'flex', gap: '15px' }}>
                             <SocialIcon Icon={Facebook} />
@@ -25,27 +24,26 @@ export default function Footer() {
 
                     <div>
                         <h4 style={{ fontSize: '1.2rem', marginBottom: '25px' }}>Company</h4>
-                        <FooterLinks links={['About Us', 'Blog', 'Service', 'Careers', 'Contact']} />
+                        <FooterLinks links={['About Us', 'Reviews', 'Services', 'Service Area', 'Contact']} />
                     </div>
 
                     <div>
                         <h4 style={{ fontSize: '1.2rem', marginBottom: '25px' }}>Services</h4>
-                        <FooterLinks links={['Cooling Services', 'Air Conditioning', 'Indoor Air Quality', 'Gas Furnace Heating', 'Refrigeration Install']} />
+                        <FooterLinks links={['Residential Repair', 'Water Heaters', 'Drain Cleaning', 'Emergency Response', 'Remodeling']} />
                     </div>
 
                     <div>
                         <h4 style={{ fontSize: '1.2rem', marginBottom: '25px' }}>Contact Us</h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                            <ContactItem Icon={MapPin} text="700 S. Austin Ave, Austin, TX 90033" />
+                            <ContactItem Icon={MapPin} text="Gulf Coast, Florida" />
                             <ContactItem Icon={Phone} text={siteConfig.phoneNumber} />
                             <ContactItem Icon={Mail} text={siteConfig.email} />
                         </div>
                     </div>
-
                 </div>
 
                 <div style={{ borderTop: '1px solid #eee', paddingTop: '30px', display: 'flex', justifyContent: 'space-between', color: '#999', fontSize: '0.9rem' }}>
-                    <p>Licensed & Insured. Made with ❤️ Copyright © EZ HVAC. All rights reserved.</p>
+                    <p>Licensed & Insured. Copyright © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.</p>
                     <div style={{ display: 'flex', gap: '30px' }}>
                         <span>Terms and Conditions</span>
                         <span>Our Terms</span>

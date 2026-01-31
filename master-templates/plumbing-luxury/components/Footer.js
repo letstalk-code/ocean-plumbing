@@ -15,7 +15,7 @@ export default function Footer() {
                         </div>
 
                         <p style={{ color: '#64748b', lineHeight: '1.7', marginBottom: '30px', maxWidth: '300px' }}>
-                            Your top-rated plumbing experts in Pasco County. Specializing in emergency repairs, water heaters, and precision installations.
+                            Your top-rated plumbing experts on the Gulf Coast. Specializing in emergency repairs, water heaters, and precision installations.
                         </p>
                         <div style={{ display: 'flex', gap: '15px' }}>
                             <SocialIcon Icon={Facebook} color={brandColors.secondary} />
@@ -32,13 +32,13 @@ export default function Footer() {
 
                     <div>
                         <h4 style={{ fontSize: '1.2rem', marginBottom: '25px', color: brandColors.secondary, fontWeight: '700' }}>Services</h4>
-                        <FooterLinks links={['Emergency Repair', 'Water Heaters', 'Leak Detection', 'Drain Cleaning', 'Water Filtration']} />
+                        <FooterLinks links={['Emergency Repair', 'Water Heaters', 'Leak Detection', 'Drain Cleaning', 'Remodeling']} />
                     </div>
 
                     <div>
                         <h4 style={{ fontSize: '1.2rem', marginBottom: '25px', color: brandColors.secondary, fontWeight: '700' }}>Contact Us</h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                            <ContactItem Icon={MapPin} text="New Port Richey, FL 34653" primary={brandColors.primary} />
+                            <ContactItem Icon={MapPin} text="Gulf Coast, Florida" primary={brandColors.primary} />
                             <ContactItem Icon={Phone} text={siteConfig.phoneNumber} primary={brandColors.primary} />
                             <ContactItem Icon={Mail} text={siteConfig.email} primary={brandColors.primary} />
                         </div>
@@ -47,7 +47,7 @@ export default function Footer() {
                 </div>
 
                 <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '30px', display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: '0.9rem' }}>
-                    <p>Licensed & Insured Florida Plumbing Contractor. Copyright © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.</p>
+                    <p>Licensed & Insured Florida Plumbing Contractor #{siteConfig.licenseNumber}. Copyright © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.</p>
                     <div style={{ display: 'flex', gap: '30px' }}>
                         <span>Terms & Conditions</span>
                         <span>Privacy Policy</span>

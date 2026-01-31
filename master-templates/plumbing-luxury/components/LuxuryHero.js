@@ -30,7 +30,7 @@ export default function LuxuryHero() {
                     {/* Left Side: Headline */}
                     <div>
                         <h1 style={{ fontFamily: '"Playfair Display", serif', fontSize: '6rem', lineHeight: '1', marginBottom: '40px', fontWeight: '500', color: brandColors.secondary }}>
-                            Guarding your<br /><span style={{ color: brandColors.primary }}>peace of mind</span>
+                            Coastal Excellence<br /><span style={{ color: brandColors.primary }}>in Every Drop</span>
                         </h1>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
                             <button style={{ backgroundColor: brandColors.primary, color: '#fff', padding: '18px 35px', borderRadius: '12px', border: 'none', fontWeight: '700', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', boxShadow: `0 10px 20px ${brandColors.primary}33` }}>

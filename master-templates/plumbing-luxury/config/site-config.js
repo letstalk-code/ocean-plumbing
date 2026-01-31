@@ -1,39 +1,38 @@
 export const siteConfig = {
-    businessName: 'Pivotal Plumbing LLC',
-    tagline: 'Guarding your peace of mind with expert plumbing solutions.',
-    phoneNumber: '(727) 686-1001',
-    email: 'pivotalplumbingfl@gmail.com',
-    logoUrl: '/images/pivotal_plumbing_logo.png',
+    businessName: 'Ocean Plumbing Services LLC',
+    tagline: 'Premium coastal plumbing solutions with precision and care.',
+    phoneNumber: '(727) 678-6819',
+    email: 'contact@oceanplumbingservices.com',
+    logoUrl: '/images/ocean_plumbing_logo.png',
+    licenseNumber: 'CFC1432333',
     brandColors: {
-        primary: '#00CCFF', // Vibrant Cyan from logo
-        secondary: '#005696', // Deep Blue from logo
-        accent: '#00A3E0',   // Mid-tone Blue
-        dark: '#003366'      // Darkest Blue/Navy
+        primary: '#0076BD', // Ocean Blue from logo
+        secondary: '#9C1F2E', // Deep Red from logo
+        accent: '#00A3E0',   // Coastal Blue
+        dark: '#002D5A'      // Deep Sea Blue
     },
-    heroTitle: 'Guarding your peace of mind',
-    heroFormTitle: 'Request Emergency Service',
-    aboutTitle: 'Your Go-To Plumbing Experts in Pasco County, Florida',
+    heroTitle: 'Coastal Excellence in Every Drop',
+    heroFormTitle: 'Request Professional Service',
+    aboutTitle: 'Serving the Gulf Coast with Licensed Plumbing Expertise',
     aboutPoints: [
-        { title: 'Expertise & Quality', desc: 'Equipped with the latest tools to ensure long-lasting results.' },
-        { title: '24/7 Availability', desc: 'From dripping pipes to large-scale projects, we are here for you.' },
-        { title: 'Family-Owned Values', desc: 'Treating every home like our own with professional care.' },
-        { title: 'Top-Rated Service', desc: '5.0 Rating with over 85+ verified reviews.' }
+        { title: 'Licensed & Insured', desc: 'State Certified Contractor (CFC1432333) you can trust.' },
+        { title: 'Emergency Response', desc: 'Rapid coastal response for all your plumbing emergencies.' },
+        { title: 'Quality Craftsmanship', desc: 'Precision work backed by years of local experience.' },
+        { title: 'Community Focused', desc: 'Born and raised on the coast, treating every client like a neighbor.' }
     ],
     featuredServices: [
-        { title: 'Emergency Repair', desc: 'Fast and reliable 24/7 emergency plumbing services for bursts and leaks.', img: '/images/emergency-repair-plumber.jpg', size: 'large' },
-        { title: 'Water Heaters', desc: 'Expert repair and replacement for all heater models and brands.', img: '/images/bathroom-plumber.jpg', size: 'small' },
-        { title: 'Leak Detection', desc: 'Precision leak repairs for pipes, faucets, and high-tech fixtures.', img: '/images/plumber-action.png', size: 'small' },
-        { title: 'Drain Cleaning', desc: 'Advanced clog removal and preventive maintenance for smooth drains.', img: '/images/plumber-tools.png', size: 'medium' },
-        { title: 'Water Filtration', desc: 'Custom filtration systems for clean, healthy water throughout your home.', img: 'https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=400', size: 'small' }
+        { title: 'Residential Repair', desc: 'Complete home plumbing repairs from leaky faucets to major pipe bursts.', img: '/images/emergency-repair-plumber.jpg', size: 'large' },
+        { title: 'Water Heaters', desc: 'Installation and maintenance of high-efficiency water heating systems.', img: '/images/bathroom-plumber.jpg', size: 'small' },
+        { title: 'Drain Specialist', desc: 'Advanced cleaning and clearing of the toughest coastal clogs.', img: '/images/plumber-action.png', size: 'small' },
+        { title: 'Leak Detection', desc: 'High-tech pinpointing of hidden leaks to save you time and money.', img: '/images/plumber-tools.png', size: 'medium' },
+        { title: 'Plumbing Remodels', desc: 'Upgrade your coastal home with premium fixtures and expert re-piping.', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400', size: 'small' }
     ],
 
-
-
-    neighborhoods: ['New Port Richey', 'Pasco County', 'Trinity', 'Odessa', 'Holiday'],
+    neighborhoods: ['Gulf Coast', 'Pinellas County', 'Clearwater', 'St. Petersburg', 'Largo'],
     testimonials: [
-        { name: 'HomeAdvisor User', role: 'Verified Client', text: 'Very professional, courteous, fair price. We very much enjoyed working with them. They really know their trade!', rating: 5, photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100' },
-        { name: 'Angie\'s List Client', role: 'Homeowner', text: 'Pivotal Plumbing did a thorough job replacing a broken toilet flange. A job well done! I would highly recommend them.', rating: 5, photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100' },
-        { name: 'Google Reviewer', role: 'Local Business Owner', text: 'Excellent Service! The BEST! Very professional service! On time. Respectful.', rating: 5, photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100' }
+        { name: 'Local Resident', role: 'Homeowner', text: 'Ocean Plumbing was fantastic. They arrived on time and fixed our main line issue faster than expected.', rating: 5, photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100' },
+        { name: 'Beachfront Property', role: 'Property Manager', text: 'Reliable and professional. The only plumbers we call for our coastal rentals.', rating: 5, photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100' },
+        { name: 'Small Business', role: 'Owner', text: 'Great service and fair pricing. Highly recommend them for any commercial plumbing needs.', rating: 5, photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100' }
     ],
     team: [
         'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=300',
@@ -41,9 +40,10 @@ export const siteConfig = {
     ],
     services: [
         { id: 'emergency', label: 'Emergency', icon: 'zap' },
-        { id: 'leaks', label: 'Leak Repair', icon: 'droplet' },
+        { id: 'repair', label: 'Repairs', icon: 'wrench' },
         { id: 'heaters', label: 'Water Heaters', icon: 'thermometer' },
-        { id: 'drains', label: 'Drain Cleaning', icon: 'wrench' }
+        { id: 'remodel', label: 'Remodeling', icon: 'home' }
     ]
 };
+
 
