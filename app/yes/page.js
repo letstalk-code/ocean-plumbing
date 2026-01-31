@@ -199,6 +199,26 @@ function YesPageContent() {
                         />
                     </div>
 
+                    <div>
+                        <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', fontWeight: '600', color: '#334155' }}>Business Name</label>
+                        <input
+                            type="text"
+                            placeholder="Your Business Name"
+                            value={formData.businessName}
+                            onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+                            style={{
+                                width: '100%',
+                                padding: '14px 16px',
+                                borderRadius: '12px',
+                                border: '1px solid #cbd5e1',
+                                fontSize: '1rem',
+                                outline: 'none'
+                            }}
+                            onFocus={(e) => e.target.style.borderColor = '#001f3f'}
+                            onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
+                        />
+                    </div>
+
                     {error && (
                         <div style={{ color: '#ef4444', fontSize: '0.9rem', textAlign: 'center', backgroundColor: '#fef2f2', padding: '10px', borderRadius: '8px' }}>
                             {error}
