@@ -1,0 +1,5 @@
+{
+    "buildCommand": "cd master-templates/hvac-professional && npm install && npm run build",
+    "outputDirectory": "master-templates/hvac-professional/.next",
+    "installCommand": "cd master-templates/hvac-professional && npm install"
+}
