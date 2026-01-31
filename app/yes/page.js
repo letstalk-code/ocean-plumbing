@@ -1,13 +1,11 @@
 "use client";
 
-export const dynamic = 'force-dynamic';
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Loader2, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '../../master-templates/hvac-professional/config/site-config';
 
-export default function YesPage() {
+function YesPageContent() {
     const searchParams = useSearchParams();
     const [formData, setFormData] = useState({
         name: '',
@@ -243,5 +241,13 @@ export default function YesPage() {
                 </form>
             </div>
         </div>
+    );
+}
+
+export default function YesPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <YesPageContent />
+        </Suspense>
     );
 }
